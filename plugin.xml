@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="uk.co.cv-library.plugins.DropboxChooser"
+    version="1.0.0">
+
+    <name>Dropbox Chooser</name>
+    <author>CV-Library</author>
+    <description>
+        This plugin allows your application to use the Dropbox Chooser
+    </description>
+    <keywords>Dropbox, Dropbox Chooser, Dropbox Upload</keywords>
+    <license>MIT</license>
+
+    <js-module src="www/DropboxChooser.js" name="dropbox-chooser">
+        <clobbers target="plugins.DropboxChooser" />
+    </js-module>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <!-- ios -->
+    <platform name="ios">
+        <feature name="DropboxChooser">
+            <param name="ios-package" value="DropboxChooser" />
+        </feature>
+
+        <config-file target="config.xml" parent="/*">
+            <feature name="DropboxChooser">
+                <param name="ios-package" value="DropboxChooser"/>
+            </feature>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+            <array>
+                <dict>
+                    <key>CFBundleTypeRole</key>
+                    <string>Shell</string>
+                    <key>CFBundleURLName</key>
+                    <string>$APP_ID</string>
+                    <key>CFBundleURLSchemes</key>
+                    <array>
+                        <string>db-$DROPBOX_APP_KEY</string>
+                    </array>
+                </dict>
+            </array>
+        </config-file>
+
+        <header-file src="src/ios/AppDelegate+DropboxChooser.h" />
+        <source-file src="src/ios/DropboxChooser.m" />
+
+        <header-file src="src/ios/DropboxChooser.h" />
+        <source-file src="src/ios/AppDelegate+DropboxChooser.m" />
+
+        <resource-file src="src/ios/DBChooser.bundle" />
+
+        <header-file src="src/ios/DBChooser.framework/Headers/DBChooser.h" />
+        <header-file src="src/ios/DBChooser.framework/Headers/DBChooserResult.h" />
+        <source-file src="src/ios/DBChooser.framework/DBChooser" framework="true" />
+    </platform>
+    <info>
+        This plugin will allow you to integrate the Dropbox Chooser into your iOS app,
+        allowing users to select a file from their Dropbox (if they have the Dropbox app installed),
+        and returning that file's information (URL, filename and logo) to the app.
+    </info>
+</plugin>
