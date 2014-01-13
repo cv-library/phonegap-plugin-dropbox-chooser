@@ -1,17 +1,14 @@
-cordova.define("uk.co.cv-library.plugins.DropboxChooser.dropbox-chooser", function(require, exports, module) { var DropboxChooser = function() {};
-    DropboxChooser.launchDropboxChooser = function(callback, errorCallback, usePreviewLink) {
-        cordova.exec(callback, errorCallback, "DropboxChooser", "launchDropboxChooser", [usePreviewLink]);
-    };
+DropboxChooser.launchDropboxChooser = function(callback, errorCallback, usePreviewLink) {
+    cordova.exec(callback, errorCallback, "DropboxChooser", "launchDropboxChooser", [usePreviewLink]);
+};
 
-    if(!window.plugins) {
-        window.plugins = {};
-    }
-    if (!window.plugins.DropboxChooser) {
-        window.plugins.DropboxChooser = new DropboxChooser();
-    }
+if(!window.plugins) {
+    window.plugins = {};
+}
+if (!window.plugins.DropboxChooser) {
+    window.plugins.DropboxChooser = new DropboxChooser();
+}
 
-    if (module.exports) {
-        module.exports = DropboxChooser;
-    }
-});
-
+if (module.exports) {
+    module.exports = DropboxChooser;
+}
