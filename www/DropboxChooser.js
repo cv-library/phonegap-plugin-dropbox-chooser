@@ -1,3 +1,5 @@
+var DropboxChooser = function() {};
+
 DropboxChooser.launchDropboxChooser = function(callback, errorCallback, usePreviewLink) {
     cordova.exec(callback, errorCallback, "DropboxChooser", "launchDropboxChooser", [usePreviewLink]);
 };
