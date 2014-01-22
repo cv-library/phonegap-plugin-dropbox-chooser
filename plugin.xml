@@ -59,6 +59,14 @@
         <header-file src="src/ios/DBChooser.framework/Headers/DBChooserResult.h" />
         <source-file src="src/ios/DBChooser.framework/DBChooser" framework="true" />
     </platform>
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DropboxChooser">
+                <param name="android-package" value="uk.co.cv_library.plugins.DropboxChooser" />
+            </feature>
+        </config-file>
+        <source-file src="src/android/DropboxChooser.java" target-dir="src/uk/co/cv_library/plugins/" />
+    </platform>
     <info>
         This plugin will allow you to integrate the Dropbox Chooser into your iOS app,
         allowing users to select a file from their Dropbox (if they have the Dropbox app installed),
