@@ -17,20 +17,35 @@ import com.dropbox.chooser.android.DbxChooser;
     */
 public class DropboxChooser extends CordovaPlugin {
         
-    static final int DBX_CHOOSER_REQUEST = 42;
+    static final int DBX_CHOOSER_REQUEST = 1;
     private DbxChooser mChooser;
     private CallbackContext context;
+    private String dropboxAppId = "";
+    private String linkType = "";
+    private Boolean previewLink;
     
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
-        Log.d("DropboxChooser", "Hello, this is a native function called from PhoneGap/Cordova!");
 
-        if (action.equals("launchDropboxChooser")) {
+        if (action.equals("init")) {
+                dropboxAppId = args.getString(0);
+        }
+        else if (action.equals("launchDropboxChooser")) {
             context = callbackContext;
             cordova.setActivityResultCallback(DropboxChooser.this);
-            mChooser = new DbxChooser("fjz3dk1r3wrhg2c");
-            mChooser.forResultType(DbxChooser.ResultType.DIRECT_LINK)
-                .launch(cordova.getActivity(), DBX_CHOOSER_REQUEST);                   
+            mChooser = new DbxChooser(dropboxAppId);
+
+            linkType = args.getString(0);
+            previewLink = Boolean.valueOf(linkType);
+
+            if (previewLink) {
+                mChooser.forResultType(DbxChooser.ResultType.PREVIEW_LINK)
+                                .launch(cordova.getActivity(), DBX_CHOOSER_REQUEST);
+            }
+            else {
+                    mChooser.forResultType(DbxChooser.ResultType.DIRECT_LINK)
+                                .launch(cordova.getActivity(), DBX_CHOOSER_REQUEST);
+            }
             return true;
         }
         return false;
@@ -41,7 +56,6 @@ public class DropboxChooser extends CordovaPlugin {
         if (requestCode == DBX_CHOOSER_REQUEST) {
             if (resultCode == Activity.RESULT_OK) {
                 DbxChooser.Result result = new DbxChooser.Result(data);
-                Log.d("main", "Link to selected file: " + result.getLink());
                 JSONArray results = new JSONArray();
                 JSONObject fileObj = new JSONObject();
                 try {
@@ -64,3 +78,4 @@ public class DropboxChooser extends CordovaPlugin {
         }
     }     
 }
+
