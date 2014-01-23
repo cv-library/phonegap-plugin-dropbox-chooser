@@ -47,17 +47,39 @@
             </array>
         </config-file>
 
-        <header-file src="src/ios/AppDelegate+DropboxChooser.h" />
-        <source-file src="src/ios/DropboxChooser.m" />
-
+        <!-- DropboxChooser plugin files -->
         <header-file src="src/ios/DropboxChooser.h" />
+        <header-file src="src/ios/AppDelegate+DropboxChooser.h" />
+
+        <source-file src="src/ios/DropboxChooser.m" />
         <source-file src="src/ios/AppDelegate+DropboxChooser.m" />
 
-        <resource-file src="src/ios/DBChooser.bundle" />
+        <!-- Dropbox SDK files -->
+        <header-file src="src/ios/DBCConstants.h" />
+        <header-file src="src/ios/DBChooser.h" />
+        <header-file src="src/ios/DBChooser+Private.h" />
+        <header-file src="src/ios/DBChooserResult.h" />
+        <header-file src="src/ios/DBChooserResult+Private.h" />
+        <header-file src="src/ios/DBCLocalization.h" />
+        <header-file src="src/ios/ui/DBAppearance.h" />
+        <header-file src="src/ios/ui/DBCBlueButton.h" />
+        <header-file src="src/ios/ui/DBChooserAppearance.h" />
+        <header-file src="src/ios/ui/DBChooserNoDropboxViewController.h" />
+        <header-file src="src/ios/ui/DBCStyledErrorView.h" />
+        <header-file src="src/ios/ui/DBCStyledNavigationController.h" />
 
-        <header-file src="src/ios/DBChooser.framework/Headers/DBChooser.h" />
-        <header-file src="src/ios/DBChooser.framework/Headers/DBChooserResult.h" />
-        <source-file src="src/ios/DBChooser.framework/DBChooser" framework="true" />
+        <source-file src="src/ios/DBCConstants.m" />
+        <source-file src="src/ios/DBChooser.m" />
+        <source-file src="src/ios/DBChooserResult.m" />
+        <source-file src="src/ios/DBCLocalization.m" />
+        <source-file src="src/ios/ui/DBAppearance.m" />
+        <source-file src="src/ios/ui/DBCBlueButton.m" />
+        <source-file src="src/ios/ui/DBChooserAppearance.m" />
+        <source-file src="src/ios/ui/DBChooserNoDropboxViewController.m" />
+        <source-file src="src/ios/ui/DBCStyledErrorView.m" />
+        <source-file src="src/ios/ui/DBCStyledNavigationController.m" />
+
+        <resource-file src="src/ios/DBChooser.bundle" />
     </platform>
     <platform name="android">
         <config-file target="config.xml" parent="/*">
@@ -69,7 +91,7 @@
         <source-file src="src/android/dropboxchoosersdk.jar" target-dir="libs" />
     </platform>
     <info>
-        This plugin will allow you to integrate the Dropbox Chooser into your iOS app,
+        This plugin will allow you to integrate the Dropbox Chooser into your iOS or Android app,
         allowing users to select a file from their Dropbox (if they have the Dropbox app installed),
         and returning that file's information (URL, filename and logo) to the app.
     </info>
