@@ -66,6 +66,7 @@
             </feature>
         </config-file>
         <source-file src="src/android/DropboxChooser.java" target-dir="src/uk/co/cv_library/plugins/" />
+        <source-file src="src/android/dropboxchoosersdk.jar" target-dir="libs" />
     </platform>
     <info>
         This plugin will allow you to integrate the Dropbox Chooser into your iOS app,
