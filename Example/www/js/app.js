@@ -7,10 +7,10 @@ $('#dropbox-choose').on('touchend', function(){
 
         // If this plugin is running on an Android device, the Dropbox app key needs feeding into the class; for iOS, this is not necessary
         if ( device_platform === "Android" ) {
-            DropboxChooser.init("APP_KEY");
+            DropboxChooser.init(APP_KEY);
         }
 
-        // Call the method 'launchDropboxChooser, which has three arguments (the success callback, failure callback and an additional mandatory flag to specify if you want a 'Preview' link returned ( "true" for a 'Preview' link; "false" for a 'Direct' link).
+        // Call the method 'launchDropboxChooser', which has three arguments (the success callback, failure callback and an additional mandatory flag to specify if you want a 'Preview' link returned ( "true" for a 'Preview' link; "false" for a 'Direct' link).
         DropboxChooser.launchDropboxChooser(setDropboxCV,function(){},"false");
     });
 
