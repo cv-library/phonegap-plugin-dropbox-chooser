@@ -16,14 +16,14 @@ import com.dropbox.chooser.android.DbxChooser;
     * This class echoes a string called from JavaScript.
     */
 public class DropboxChooser extends CordovaPlugin {
-        
+
     static final int DBX_CHOOSER_REQUEST = 1;
     private DbxChooser mChooser;
     private CallbackContext context;
     private String dropboxAppId = "";
     private String linkType = "";
     private Boolean previewLink;
-    
+
     @Override
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 
@@ -50,7 +50,7 @@ public class DropboxChooser extends CordovaPlugin {
         }
         return false;
     }
-    
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == DBX_CHOOSER_REQUEST) {
@@ -62,7 +62,7 @@ public class DropboxChooser extends CordovaPlugin {
                     fileObj.put("name", result.getName());
                     fileObj.put("link", result.getLink().toString());
                     fileObj.put("icon", result.getIcon().toString());
-                } 
+                }
                 catch (JSONException e) {
                     Log.d("main", "Failed to stack file info onto obj: " + e.getCause());
                 }
@@ -72,10 +72,10 @@ public class DropboxChooser extends CordovaPlugin {
             else {
                 context.error("Failed to select a Dropbox upload.");
             }
-        } 
+        }
         else {
             super.onActivityResult(requestCode, resultCode, data);
         }
-    }     
+    }
 }
 
