@@ -1,6 +1,11 @@
-All files in src/ios/DBChooser.bundle and src/ios/DBChooser.framework were
-extracted from the Dropbox Chooser iOS SDK, downloaded from:
+All files in src/ios/DBChooser.bundle, src/ios/UI, and all files in
+src/ios starting with the letters 'DB' were extracted from the Dropbox
+Chooser iOS SDK, downloaded from:
 https://www.dropbox.com/developers/dropins/chooser/ios
+
+All files in src/android/dropboxchoosersdk.jar are from the Dropbox
+Choose Android SDK, downloaded from:
+https://www.dropbox.com/developers/dropins/chooser/android
 
 
 Copyright (c) 2013 Dropbox Inc., http://www.dropbox.com/
