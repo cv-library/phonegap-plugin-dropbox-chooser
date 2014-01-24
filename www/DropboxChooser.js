@@ -1,3 +1,6 @@
+// Copyright (c) 2014 CV-Library Ltd.
+// Licensed under the MIT License - see LICENSE file.
+
 var DropboxChooser = function() {};
 
 DropboxChooser.init = function(dropboxAppId, fail) {

@@ -56,7 +56,7 @@ Please see the app.js file within Example/www/js for a code snippet example of h
 Authors
 -------
 
-Copyright (c) 2014 CV-Library Ltd.  http://www.cv-library.co.uk/
+Copyright (c) 2013, 2014 CV-Library Ltd.  http://www.cv-library.co.uk/
 
 Originally developed by Mark Raymond and Tim Retout.
 

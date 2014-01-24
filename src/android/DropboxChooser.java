@@ -1,3 +1,6 @@
+// Copyright (c) 2014 CV-Library Ltd.
+// Licensed under the MIT License - see LICENSE file.
+
 package uk.co.cv_library.plugins;
 
 import android.app.Activity;

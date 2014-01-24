@@ -1,4 +1,4 @@
-// Copyright (c) 2014 CV-Library Ltd.
+// Copyright (c) 2013, 2014 CV-Library Ltd.
 // Licensed under the MIT License - see LICENSE file.
 
 $('#dropbox-choose').on('touchend', function(){
