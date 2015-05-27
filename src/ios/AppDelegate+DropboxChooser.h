@@ -5,6 +5,4 @@
 
 @interface AppDelegate (DropboxChooser)
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url sourceApplication:(NSString *)source annotation:(id)annotation;
-
 @end
