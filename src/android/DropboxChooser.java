@@ -64,6 +64,7 @@ public class DropboxChooser extends CordovaPlugin {
                 try {
                     fileObj.put("name", result.getName());
                     fileObj.put("link", result.getLink().toString());
+                    fileObj.put("size", result.getSize());
                     fileObj.put("icon", result.getIcon().toString());
                 }
                 catch (JSONException e) {
