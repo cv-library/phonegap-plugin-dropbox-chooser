@@ -28,6 +28,7 @@
                 NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
                 [dictionary setObject:result.link.absoluteString forKey:@"link"];
                 [dictionary setObject:result.name forKey:@"name"];
+                [dictionary setObject:[NSNumber numberWithLongLong:result.size] forKey:@"size"];
                 [dictionary setObject:result.iconURL.absoluteString forKey:@"iconURL"];
                 [items addObject:dictionary];
             }
