@@ -147,6 +147,7 @@
             if ([scheme hasPrefix:@"db-"]) {
                 if (!appKey) {
                     appKey = [scheme substringFromIndex:3]; // substring after "db-"
+                    return appKey;
                 } else {
                     NSAssert(NO, @"DBChooser: WARNING multiple Dropbox url schemes found in Info.plist. Please use the method -initWithAppKey: instead.");
                 }
