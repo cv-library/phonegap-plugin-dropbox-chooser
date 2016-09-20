@@ -44,7 +44,7 @@
                     <string>$APP_ID</string>
                     <key>CFBundleURLSchemes</key>
                     <array>
-                        <string>$DROPBOX_APP_KEY</string>
+                        <string>db-$DROPBOX_APP_KEY</string>
                     </array>
                 </dict>
             </array>
