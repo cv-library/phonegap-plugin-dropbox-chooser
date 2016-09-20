@@ -20,6 +20,9 @@
         <engine name="cordova" version=">=3.0.0" />
     </engines>
 
+    <preference name="APP_ID"/>
+    <preference name="DROPBOX_APP_KEY"/>
+    
     <!-- ios -->
     <platform name="ios">
         <feature name="DropboxChooser">
