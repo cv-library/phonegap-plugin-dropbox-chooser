@@ -46,6 +46,11 @@
                     <array>
                         <string>$DROPBOX_APP_KEY</string>
                     </array>
+                    <key>LSApplicationQueriesSchemes</key>
+                    <array>
+                        <string>dbapi-1</string>
+                        <string>dbapi-3</string>
+                    </array>
                 </dict>
             </array>
         </config-file>
