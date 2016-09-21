@@ -20,6 +20,9 @@
         <engine name="cordova" version=">=3.0.0" />
     </engines>
 
+    <preference name="APP_ID"/>
+    <preference name="DROPBOX_APP_KEY"/>
+    
     <!-- ios -->
     <platform name="ios">
         <feature name="DropboxChooser">
@@ -41,10 +44,17 @@
                     <string>$APP_ID</string>
                     <key>CFBundleURLSchemes</key>
                     <array>
-                        <string>db-$DROPBOX_APP_KEY</string>
+                        <string>$DROPBOX_APP_KEY</string>
                     </array>
                 </dict>
             </array>
+        </config-file>
+        
+         <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+          <array>
+            <string>dbapi-1</string>
+            <string>dbapi-3</string>
+          </array>
         </config-file>
 
         <!-- DropboxChooser plugin files -->
